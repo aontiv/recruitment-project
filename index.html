@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>Recruitment Project</title>
+    <style>
+
+        /* Variables */
+        :root {
+            --color-0-0-0: #000;
+            --color-0-0-20: #333;
+            --color-0-0-40: #666;
+            --color-0-0-100: #fff;
+            --color-200-33-97: #F5F8FA;
+            --font-weight-bold: 700;
+            --font-weight-light: 300;
+            --font-weight-medium: 500;
+            --font-weight-regular: 400;
+        }
+
+        /* Reset */
+        html {
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        img {
+            display: inline-block;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-column-gap: 2.4rem;
+            grid-template-columns: repeat(12, 8rem);
+        }
+
+        /* Typography */
+        .light-16-24 {
+            color: var(--color-0-0-20);
+            font-size: 1.6rem;
+            font-weight: var(--font-weight-light);
+            line-height: 2.4rem;
+            text-align: center;
+        }
+
+        .regular-16-16 {
+            color: var(--color-0-0-40);
+            font-size: 1.6rem;
+            font-weight: var(--font-weight-regular);
+            line-height: 1.6rem;
+            text-align: left;
+        }
+
+        .regular-18-26 {
+            color: var(--color-0-0-100);
+            font-size: 1.8rem;
+            font-weight: var(--font-weight-regular);
+            line-height: 2.6rem;
+            text-align: left;
+        }
+
+        .regular-20-28 {
+            color: var(--color-0-0-20);
+            font-size: 2rem;
+            font-weight: var(font-weight-regular);
+            line-height: 2.8rem;
+            text-align: left;
+        }
+
+        .medium-20-20 {
+            color: var(--color-0-0-100);
+            font-size: 2rem;
+            font-weight: var(--font-weight-medium);
+            line-height: 2rem;
+            text-align: left;
+        }
+
+        .medium-40-48 {
+            color: var(--color-0-0-20);
+            font-size: 4rem;
+            font-weight: var(--font-weight-medium);
+            line-height: 4.8rem;
+            text-align: left;
+        }
+
+        .bold-20-20 {
+            color: var(--color-0-0-100);
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            line-height: 2rem;
+            text-align: center;
+        }
+
+        .bold-24-28 {
+            color: var(--color-0-0-20);
+            font-size: 2.4rem;
+            font-weight: var(--font-weight-bold);
+            line-height: 2.8rem;
+            text-align: center;
+        }
+
+        .bold-40-48 {
+            color: var(--color-0-0-20);
+            font-size: 4rem;
+            font-weight: var(--font-weight-bold);
+            line-height: 4.8rem;
+            text-align: center;
+        }
+
+        .bold-60-68 {
+            color: var(--color-0-0-100);
+            font-size: 6rem;
+            font-weight: var(--font-weight-bold);
+            line-height: 6.8rem;
+            text-align: left;
+        }
+
+        /* Main Background */
+        .main-bg {
+            background-color: var(--color-0-0-100);
+            min-height: 100vh;
+            padding: 2.4rem;
+            position: relative;
+        }
+
+        .main-bg__svg {
+            display: block;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            margin: auto;
+            margin-bottom: 8rem;
+            max-width: 120rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header__company-logo {
+            grid-column: 2 / 6;
+        }
+
+        /* Section 01 */
+        .section-01 {
+            margin: auto;
+            margin-bottom: 13.6rem;
+            max-width: 120rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section 01: Text */
+        .section-01-text {
+            grid-column: 2 / 6;
+            grid-row: 1 / 2;
+            margin-top: 9.6rem;
+            max-width: 39.2rem;
+        }
+
+        .section-01-text-questions {
+            align-items: center;
+            display: flex;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-01-text-questions__text {
+            margin: 0;
+            margin-left: 1.6rem;
+        }
+
+        .section-01-text__title {
+            margin: 0;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-01-text__text {
+            margin: 0;
+        }
+
+        /* Section 01: Airplane */
+        .section-01-airplane {
+            justify-self: center;
+            grid-row: 2 / 3;
+            grid-column: 3 / 8;
+            z-index: 2;
+        }
+
+        .section-01-airplane__airplane {
+            margin-top: 2.4rem;
+        }
+
+        /* Section 01: Form */
+        .section-01-form {
+            background-color: var(--color-0-0-100);
+            grid-column: 7 / 12;
+            grid-row: 1 / 3;
+            max-height: 63.2rem;
+            max-width: 48.8rem;
+            padding: 5.6rem;
+            border-radius: 0.8rem;
+            box-shadow:
+                1.6rem 1.6rem 0 0 rgba(255, 255, 255, 0.1),
+                0 1.6rem 2.4rem 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .section-01-form__title {
+            margin: 0;
+        }
+
+        .section-01-form__subtitle {
+            margin: 0;
+            margin-bottom: 3.2rem;
+        }
+
+        .section-01-form-input {
+            background-color: var(--color-200-33-97);
+            border-radius: 0.8rem;
+            display: flex;
+            margin-bottom: 2.4rem;
+            max-height: 5.6rem;
+            max-width: 37.6rem;
+            padding: 1.6rem;
+        }
+
+        /* TODO: Add this class with JS when an input field is focused */
+        .section-01-form-input--focus {
+            border: 2px solid var(--color-0-0-40);
+        }
+
+        .section-01-form-input__input {
+            background-color: var(--color-200-33-97);
+            border: unset;
+            margin-left: 1.6rem;
+            outline: none;
+            width: 100%;
+        }
+
+        .section-01-form-radio-btns {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            height: 2.4rem;
+            margin-bottom: 0.8rem;
+            padding-left: 4rem;
+            position: relative;
+        }
+
+        .section-01-form-radio-btns--school {
+            margin-bottom: 3.6rem;
+        }
+
+        .section-01-form-radio-btns__input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .section-01-form-radio-btns__radio {
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .section-01-form__submit {
+            background-color:var(--color-0-0-20);
+            border: unset;
+            border-radius: 0.8rem;
+            height: 8rem;
+            transition: background-color 250ms;
+            width: 37.6rem;
+        }
+
+        .section-01-form__submit:hover {
+            background-color: var(--color-0-0-0);
+            cursor: pointer;
+        }
+
+        /* Section 02 */
+        .section-02 {
+            margin: auto;
+            margin-bottom: 9.6rem;
+            max-width: 120rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-02__title {
+            justify-self: center;
+            grid-column: 1 / 13;
+            grid-row: 1 / 2;
+            margin: 0;
+        }
+
+        .section-02__text {
+            align-items: center;
+            grid-column: 3 / 11;
+            grid-row: 2 / 3;
+            text-align: center;
+        }
+
+        /* Section 03 */
+        .section-03 {
+            margin: auto;
+            max-width: 120rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-03-cards {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            grid-column: 2 / 12;
+        }
+
+        .section-03-card {
+            background-color: var(--color-0-0-100);
+            border-radius: 0.8rem;
+            box-shadow: 0 0.4rem 1.6rem 0 rgba(0, 0, 0, 0.25);
+            height: 35.2rem;
+            margin-bottom: 1.6rem;
+            margin-right: 1.6rem;
+            width: 48rem;
+            padding: 3.2rem;
+        }
+
+        .section-03-card-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3.2rem;
+        }
+
+        .section-03-card__title {
+            margin: 0;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-03-card__text {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const App = () => (
+            <div className="main-bg">
+                {/* Header */}
+                <header className="header grid">
+                    <img className="header__company-logo" src="company-logo.png" alt="" />
+                </header>
+
+                {/* Section 01 */}
+                <div className="section-01 grid">
+
+                    {/* Section 01: Text */}
+                    <div className="section-01-text">
+                        <div className="section-01-text-questions">
+                            <img src="section-01-text-questions__line.svg" alt="" />
+                            <p className="section-01-text-questions__text medium-20-20">Career change? New future?</p>
+                        </div>
+                        <h1 className="section-01-text__title bold-60-68">Ready for Extraordinary?</h1>
+                        <p className="section-01-text__text regular-18-26">Keller Williams has always been more than just a real estate company. Our mission is clear: to build careers worth having, businesses worth owning and lives worth living.</p>
+                    </div>
+
+                    {/* Section 01: Airplane */}
+                    <div className="section-01-airplane">
+                        <img className="section-01-airplane__airplane" src="section-01-airplane__airplane.svg" alt="" />
+                    </div>
+
+                    {/* Section 01: Form */}
+                    <form className="section-01-form">
+                        <h2 className="section-01-form__title medium-40-48">Start now!</h2>
+                        <p className="section-01-form__subtitle regular-20-28">Start your KW journey today:</p>
+
+                        {/* Input: Full Name */}
+                        <div className="section-01-form-input">
+                            <img src="section-01-form-input__full-name.svg" alt="" />
+                            <input className="section-01-form-input__input regular-16-16" type="text" placeholder="Full Name" />
+                        </div>
+
+                        {/* Input: Email */}
+                        <div className="section-01-form-input">
+                            <img src="section-01-form-input__email.svg" alt="" />
+                            <input className="section-01-form-input__input regular-16-16" type="email" placeholder="Email" />
+                        </div>
+
+                        {/* Input: Phone */}
+                        <div className="section-01-form-input">
+                            <img src="section-01-form-input__phone.svg" alt="" />
+                            <input className="section-01-form-input__input regular-16-16" type="phone" placeholder="Phone" />
+                        </div>
+
+                        {/* Radio Button: Agent */}
+                        {/* TODO: Switch radio button image when clicked */}
+                        <label className="section-01-form-radio-btns regular-16-16">A licensed Agent
+                            <input className="section-01-form-radio-btns__input" type="radio" name="radio" />
+                            <img className="section-01-form-radio-btns__radio" src="section-01-form-radio-btns__radio--default.svg" />
+                        </label>
+
+                        {/* Radio Button: Real Estate School */}
+                        <label className="section-01-form-radio-btns section-01-form-radio-btns--school regular-16-16">In Real Estate School
+                            <input className="section-01-form-radio-btns__input" type="radio" name="radio" checked />
+                            <img className="section-01-form-radio-btns__radio" src="section-01-form-radio-btns__radio--checked.svg" />
+                        </label>
+
+                        {/* Submit Button */}
+                        <button className="section-01-form__submit bold-20-20" type="submit">GET STARTED</button>
+                    </form>
+
+                </div>
+
+                {/* Section 02 */}
+                <div className="section-02 grid">
+                
+                    <h2 className="section-02__title bold-40-48">Built by Agent, for Agents</h2>
+                    <p className="section-02__text regular-20-28">And that means an unapologetic focus on you – the most important part of our business – the agent.</p>
+
+                </div>
+
+                {/* Section 03 */}
+                <div className="section-03 grid">
+
+                    {/* Section 03: Cards */}
+                    <div className="section-03-cards">
+                
+                        {/* Card: Marketing */}
+                        <div className="section-03-card">
+                            <div className="section-03-card-icon">
+                                <img className="section-03-card-icon__marketing" src="section-03-card__marketing.svg" alt="" />
+                            </div>
+                            <h3 className="section-03-card__title bold-24-28">Marketing</h3>
+                            <p className="section-03-card__text light-16-24">The KW Lead Generation Network gives you presence and power in online searches. The Keller Williams Listing System (KWLS) protects you when you decide to syndicate your listings.</p>
+                        </div>
+
+                        {/* Card: Technology */}
+                        <div className="section-03-card">
+                            <div className="section-03-card-icon">
+                                <img className="section-03-card-icon__technology" src="section-03-card__technology.svg" alt="" />
+                            </div>
+                            <h3 className="section-03-card__title bold-24-28">Cutting Edge Technology</h3>
+                            <p className="section-03-card__text light-16-24">The Keller Cloud is technology that helps you control your database, your business, and your future with a fully integrated suite of products developed by agents, for agents.</p>
+                        </div>
+
+                        {/* Card: Training and Coaching */}
+                        <div className="section-03-card">
+                            <div className="section-03-card-icon">
+                                <img className="section-03-card-icon__training" src="section-03-card__training.svg" alt="" />
+                            </div>
+                            <h3 className="section-03-card__title bold-24-28">Training and Coaching</h3>
+                            <p className="section-03-card__text light-16-24">Named the #1 Training Organization in the world by Training Magazine in 2015, we’re often described as a training and coaching company cleverly disguised as a real estate franchise.</p>
+                        </div>
+
+                        {/* Card: Shared Success */}
+                        <div className="section-03-card">
+                            <div className="section-03-card-icon">
+                                <img className="section-03-card-icon__success" src="section-03-card__success.svg" alt="" />
+                            </div>
+                            <h3 className="section-03-card__title bold-24-28">Shared Success</h3>
+                            <p className="section-03-card__text light-16-24">Shared decisions. Shared succes. Through our profit share (US & Canada) and the growth share (Worldwide) programs, Keller Williams recognizes and rewards associates for helping to grow the company.</p>
+                        </div>
+
+                    </div>
+                
+                </div>
+
+                {/* Background Top SVG */}
+                <img className="main-bg__svg" src="background-top.svg" alt="" />
+            </div>
+        );
+
+        ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+</body>
+</html>
