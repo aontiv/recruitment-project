@@ -16,7 +16,8 @@
             --color-0-0-20: #333;
             --color-0-0-40: #666;
             --color-0-0-100: #fff;
-            --color-200-33-97: #F5F8FA;
+            --color-0-99-35: #b40101;
+            --color-200-33-97: #f5f8fa;
             --font-weight-bold: 700;
             --font-weight-light: 300;
             --font-weight-medium: 500;
@@ -52,9 +53,33 @@
             grid-template-columns: repeat(12, 8rem);
         }
 
+        @media only screen and (max-width: 1224px) {
+            .grid {
+                grid-template-columns: repeat(8, 8rem);
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .grid {
+                grid-template-columns: repeat(4, 8rem);
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .grid {
+                grid-template-columns: repeat(4, 6.2rem);
+            }
+        }
+
         /* Typography */
+        .light-16-16 {
+            font-size: 1.6rem;
+            font-weight: var(--font-weight-light);
+            line-height: 1.6rem;
+            text-align: center;
+        }
+
         .light-16-24 {
-            color: var(--color-0-0-20);
             font-size: 1.6rem;
             font-weight: var(--font-weight-light);
             line-height: 2.4rem;
@@ -62,7 +87,6 @@
         }
 
         .regular-16-16 {
-            color: var(--color-0-0-40);
             font-size: 1.6rem;
             font-weight: var(--font-weight-regular);
             line-height: 1.6rem;
@@ -70,7 +94,6 @@
         }
 
         .regular-18-26 {
-            color: var(--color-0-0-100);
             font-size: 1.8rem;
             font-weight: var(--font-weight-regular);
             line-height: 2.6rem;
@@ -78,15 +101,13 @@
         }
 
         .regular-20-28 {
-            color: var(--color-0-0-20);
             font-size: 2rem;
-            font-weight: var(font-weight-regular);
+            font-weight: var(--font-weight-regular);
             line-height: 2.8rem;
             text-align: left;
         }
 
         .medium-20-20 {
-            color: var(--color-0-0-100);
             font-size: 2rem;
             font-weight: var(--font-weight-medium);
             line-height: 2rem;
@@ -94,7 +115,6 @@
         }
 
         .medium-40-48 {
-            color: var(--color-0-0-20);
             font-size: 4rem;
             font-weight: var(--font-weight-medium);
             line-height: 4.8rem;
@@ -102,7 +122,6 @@
         }
 
         .bold-20-20 {
-            color: var(--color-0-0-100);
             font-size: 2rem;
             font-weight: var(--font-weight-bold);
             line-height: 2rem;
@@ -110,7 +129,6 @@
         }
 
         .bold-24-28 {
-            color: var(--color-0-0-20);
             font-size: 2.4rem;
             font-weight: var(--font-weight-bold);
             line-height: 2.8rem;
@@ -118,7 +136,6 @@
         }
 
         .bold-40-48 {
-            color: var(--color-0-0-20);
             font-size: 4rem;
             font-weight: var(--font-weight-bold);
             line-height: 4.8rem;
@@ -126,7 +143,6 @@
         }
 
         .bold-60-68 {
-            color: var(--color-0-0-100);
             font-size: 6rem;
             font-weight: var(--font-weight-bold);
             line-height: 6.8rem;
@@ -137,38 +153,89 @@
         .main-bg {
             background-color: var(--color-0-0-100);
             min-height: 100vh;
-            padding: 2.4rem;
             position: relative;
         }
 
-        .main-bg__svg {
-            display: block;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
+        .background--top,
+        .background--bottom {
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .background--top {
+            background-image: url("./background-top.svg");
+            background-position: left top;
+        }
+
+        .background--bottom {
+            background-image: url("./background-bottom.svg");
+            background-position: left bottom;
         }
 
         /* Header */
         .header {
             margin: auto;
             margin-bottom: 8rem;
-            max-width: 120rem;
+            max-width: 122.4rem;
+            padding-top: 2.4rem;
             position: relative;
             z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .header {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .header {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .header {
+                max-width: 32rem;
+            }
         }
 
         .header__company-logo {
             grid-column: 2 / 6;
         }
 
+        @media only screen and (max-width: 808px) {
+            .header__company-logo {
+                grid-column: 1 / 5;
+                max-width: 18.4rem;
+            }
+        }
+
         /* Section 01 */
         .section-01 {
             margin: auto;
             margin-bottom: 13.6rem;
-            max-width: 120rem;
+            max-width: 122.4rem;
             position: relative;
             z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-01 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01 {
+                max-width: 32rem;
+            }
         }
 
         /* Section 01: Text */
@@ -179,24 +246,87 @@
             max-width: 39.2rem;
         }
 
+        @media only screen and (max-width: 1224px) {
+            .section-01-text {
+                grid-column: 2 / 8;
+                margin-bottom: 8rem;
+                max-width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01-text {
+                grid-column: 1 / 5;
+            }
+        }
+
         .section-01-text-questions {
             align-items: center;
             display: flex;
             margin-bottom: 1.6rem;
         }
 
+        @media only screen and (max-width: 808px) {
+            .section-01-text-questions img {
+                max-width: 2.4rem;
+            }
+        }
+
         .section-01-text-questions__text {
+            color: var(--color-0-0-100);
             margin: 0;
             margin-left: 1.6rem;
         }
 
+        @media only screen and (max-width: 808px) {
+            .section-01-text-questions__text {
+                font-size: 1.6rem;
+            }
+        }
+
         .section-01-text__title {
+            color: var(--color-0-0-100);
             margin: 0;
             margin-bottom: 1.6rem;
         }
 
+        @media only screen and (max-width: 1224px) {
+            .section-01-text__title {
+                font-size: 4rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01-text__title {
+                font-size: 3.2rem;
+                line-height: 4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01-text__title {
+                font-size: 2.4rem;
+                line-height: 2.8rem;
+            }
+        }
+
         .section-01-text__text {
+            color: var(--color-0-0-100);
             margin: 0;
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01-text__text {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01-text__text {
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+            }
         }
 
         /* Section 01: Airplane */
@@ -207,6 +337,12 @@
             z-index: 2;
         }
 
+        @media only screen and (max-width: 1224px) {
+            .section-01-airplane {
+                display: none;
+            }
+        }
+
         .section-01-airplane__airplane {
             margin-top: 2.4rem;
         }
@@ -214,24 +350,80 @@
         /* Section 01: Form */
         .section-01-form {
             background-color: var(--color-0-0-100);
+            box-shadow:
+                1.6rem 1.6rem 0 0 rgba(255, 255, 255, 0.1),
+                0 1.6rem 2.4rem 0 rgba(0, 0, 0, 0.2);
             grid-column: 7 / 12;
             grid-row: 1 / 3;
             max-height: 63.2rem;
             max-width: 48.8rem;
             padding: 5.6rem;
             border-radius: 0.8rem;
-            box-shadow:
-                1.6rem 1.6rem 0 0 rgba(255, 255, 255, 0.1),
-                0 1.6rem 2.4rem 0 rgba(0, 0, 0, 0.2);
+
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-01-form {
+                justify-self: center;
+                grid-column: 2 / 8;
+                grid-row: 2 / 3;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01-form {
+                grid-column: 1 / 5;
+                padding: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01-form {
+                box-shadow:
+                    0.8rem 0.8rem 0 0 rgba(255, 255, 255, 0.1),
+                    0 0.8rem 1.2rem 0 rgba(0, 0, 0, 0.2);
+                max-width: 30.4rem;
+                padding: 1.6rem;
+            }
         }
 
         .section-01-form__title {
+            color: var(--color-0-0-20);
             margin: 0;
         }
 
+        @media only screen and (max-width: 808px) {
+            .section-01-form__title {
+                font-size: 3.2rem;
+                line-height: 4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01-form__title {
+                font-size: 2.4rem;
+                line-height: 2.8rem;
+            }
+        }
+
         .section-01-form__subtitle {
+            color: var(--color-0-0-20);
             margin: 0;
             margin-bottom: 3.2rem;
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01-form__subtitle {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .sectio-01-form__subtitle {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
         }
 
         .section-01-form-input {
@@ -244,12 +436,24 @@
             padding: 1.6rem;
         }
 
+        @media only screen and (max-width: 392px) {
+            .section-01-form-input {
+                margin-bottom: 1.6rem;
+                padding: 0.8rem;
+            }
+
+            .section-01-form-input img {
+                max-width: 1.6rem;
+            }
+        }
+
         /* TODO: Add this class with JS when an input field is focused */
         .section-01-form-input--focus {
             border: 2px solid var(--color-0-0-40);
         }
 
         .section-01-form-input__input {
+            color: var(--color-0-0-40);
             background-color: var(--color-200-33-97);
             border: unset;
             margin-left: 1.6rem;
@@ -257,14 +461,35 @@
             width: 100%;
         }
 
+        @media only screen and (max-width: 392px) {
+            .section-01-form-input__input {
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+            }
+        }
+
         .section-01-form-radio-btns {
             align-items: center;
+            color: var(--color-0-0-40);
             cursor: pointer;
             display: flex;
             height: 2.4rem;
             margin-bottom: 0.8rem;
             padding-left: 4rem;
             position: relative;
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01-form-radio-btns {
+                font-size: 1.4rem;
+                height: 1.6rem;
+                line-height: 1.4rem;
+                padding-left: 2rem;
+            }
+
+            .section-01-form-radio-btns img {
+                max-width: 1.6rem;
+            }
         }
 
         .section-01-form-radio-btns--school {
@@ -287,9 +512,26 @@
             background-color:var(--color-0-0-20);
             border: unset;
             border-radius: 0.8rem;
+            color: var(--color-0-0-100);
             height: 8rem;
             transition: background-color 250ms;
             width: 37.6rem;
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-01-form__submit {
+                height: 7.2rem;
+                width: 34.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-01-form__submit {
+                font-size: 1.6rem;
+                height: 5.6rem;
+                line-height: 1.6rem;
+                width: 27.2rem;
+            }
         }
 
         .section-01-form__submit:hover {
@@ -300,32 +542,113 @@
         /* Section 02 */
         .section-02 {
             margin: auto;
-            margin-bottom: 9.6rem;
-            max-width: 120rem;
+            margin-bottom: 6.4rem;
+            max-width: 122.4rem;
             position: relative;
             z-index: 1;
         }
+
+        @media only screen and (max-width: 1224px) {
+            .section-02 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-02 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-02 {
+                max-width: 32rem;
+            }
+        }
         
         .section-02__title {
+            color: var(--color-0-0-20);
             justify-self: center;
             grid-column: 1 / 13;
             grid-row: 1 / 2;
             margin: 0;
         }
 
+        @media only screen and (max-width: 1224px) {
+            .section-02__title {
+                grid-column: 2 / 8;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-02__title {
+                font-size: 3.2rem;
+                grid-column: 1 / 5;
+                line-height: 4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-02__title {
+                font-size: 2.4rem;
+                line-height: 2.8rem;
+            }
+        }
+
         .section-02__text {
             align-items: center;
+            color: var(--color-0-0-20);
             grid-column: 3 / 11;
             grid-row: 2 / 3;
             text-align: center;
         }
 
+        @media only screen and (max-width: 1224px) {
+            .section-02__text {
+                grid-column: 2 / 8;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-02__text {
+                font-size: 1.6rem;
+                grid-column: 1 / 5;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-02__text {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
+        }
+
         /* Section 03 */
         .section-03 {
             margin: auto;
-            max-width: 120rem;
+            margin-bottom: 6.4rem;
+            max-width: 122.4rem;
             position: relative;
             z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-03 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-03 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-03 {
+                max-width: 32rem;
+            }
         }
 
         .section-03-cards {
@@ -333,6 +656,18 @@
             flex-flow: row wrap;
             justify-content: center;
             grid-column: 2 / 12;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-03-cards {
+                grid-column: 1 / 9;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-03-cards {
+                grid-column: 1 / 5;
+            }
         }
 
         .section-03-card {
@@ -346,19 +681,630 @@
             padding: 3.2rem;
         }
 
+        @media only screen and (max-width: 808px) {
+            .section-03-card {
+                height: 28.8rem;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 1.6rem;
+                width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-03-card {
+                height: 20rem;
+                padding: 0.8rem;
+                width: 27.2rem;
+            }
+        }
+
         .section-03-card-icon {
             display: flex;
             justify-content: center;
             margin-bottom: 3.2rem;
         }
 
+        @media only screen and (max-width: 808px) {
+            .section-03-card-icon img {
+                max-width: 6.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-03-card-icon {
+                margin-bottom: 1.6rem;
+            }
+
+            .section-03-card-icon img {
+                max-width: 3.2rem;
+            }
+        }
+
         .section-03-card__title {
+            color: var(--color-0-0-20);
             margin: 0;
             margin-bottom: 1.6rem;
         }
 
+        @media only screen and (max-width: 808px) {
+            .section-03-card__title {
+                font-size: 2rem;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-03-card__title {
+                font-size: 1.6rem;
+                line-height: 2rem;
+                margin-bottom: 2.4rem;
+            }
+        }
+
         .section-03-card__text {
+            color: var(--color-0-0-20);
             margin: 0;
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-03-card__text {
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-03-card__text {
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+            }
+        }
+
+        /* Sub-Section 03 */
+        .subsection-03 {
+            margin: auto;
+            margin-bottom: 12.8rem;
+            max-width: 122.4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .subsection-03 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .subsection-03 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .subsection-03 {
+                max-width: 32rem;
+            }
+        }
+
+        .subsection-03__title {
+            color: var(--color-0-0-20);
+            justify-self: center;
+            grid-column: 1 / 13;
+            grid-row: 1 / 2;
+            margin: 0;
+            margin-bottom: 4.8rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .subsection-03__title {
+                grid-column: 1 / 9;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .subsection-03__title {
+                font-size: 2rem;
+                grid-column: 1 / 5;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .subsection-03__title {
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+        }
+
+        .subsection-03-bullets {
+            display: flex;
+            flex-flow: column wrap;
+            grid-column: 2 / 12;
+            grid-row: 2 / 3;
+            max-height: 12rem;
+            padding-left: 4rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .subsection-03-bullets {
+                grid-column: 3 / 8;
+                max-height: unset;
+                padding-left: 0;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .subsection-03-bullets {
+                grid-column: 1 / 5;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .subsection-03-bullets {
+                padding: 0 0.8rem;
+            }
+        }
+
+        .subsection-03-bullets-bullet {
+            align-items: center;
+            display: flex;
+            margin-bottom: 1.6rem;
+        }
+
+        @media only screen and (max-width: 392px) {
+            .subsection-03-bullets-bullet {
+                margin-bottom: 0.8rem;
+            }
+            
+            .subsection-03-bullets-bullet img {
+                max-width: 1.6rem;
+            }
+        }
+
+        .subsection-03-bullets-bullet__text {
+            color: var(--color-0-0-40);
+            margin: 0;
+            padding-left: 0.8rem;
+        }
+
+        @media only screen and (max-width: 392px) {
+            .subsection-03-bullets-bullet__text {
+                font-size: 1.2rem;
+                line-height: 1.2rem;
+            }
+        }
+
+        /* Section 04 */
+        .section-04 {
+            margin: auto;
+            margin-bottom: 8.8rem;
+            max-width: 122.4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-04 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-04 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-04 {
+                max-width: 32rem;
+            }
+        }
+        
+        .section-04__title {
+            color: var(--color-0-0-20);
+            justify-self: center;
+            grid-column: 1 / 13;
+            grid-row: 1 / 2;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-04__title {
+                grid-column: 1 / 9;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-04__title {
+                font-size: 3.2rem;
+                grid-column: 1 / 5;
+                line-height: 4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-04__title {
+                font-size: 2.4rem;
+                line-height: 2.8rem;
+            }
+        }
+
+        .section-04__text {
+            align-items: center;
+            color: var(--color-0-0-20);
+            grid-column: 3 / 11;
+            grid-row: 2 / 3;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-04__text {
+                grid-column: 2 / 8;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-04__text {
+                font-size: 1.6rem;
+                grid-column: 1 / 5;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-04__text {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
+        }
+
+        /* Section 05 */
+        .section-05 {
+            margin: auto;
+            margin-bottom: 14.4rem;
+            max-width: 122.4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-05 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-05 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-05 {
+                max-width: 32rem;
+            }
+        }
+
+        .section-05__video {
+            box-shadow: 0 0.8rem 2.5rem 0 rgba(0, 0, 0, 0.35);
+            grid-column: 2 / 8;
+            grid-row: 1 / 2;
+            max-width: 57.6rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-05__video {
+                justify-self: center;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-05__video {
+                grid-column: 1 / 5;
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-05__video {
+                max-width: 30.4rem;
+            }
+        }
+
+        .section-05-text {
+            grid-column: 9 / 13;
+            grid-row: 1 / 2;
+            max-width: 30.4rem
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-05-text {
+                display: none;
+            }
+        }
+
+        .section-05-text__title {
+            color: var(--color-0-0-20);
+            margin: 0;
+            margin-bottom: 2.4rem;
+            text-align: left;
+        }
+
+        .section-05-text__text {
+            color: var(--color-0-0-20);
+            margin: 0;
+            margin-bottom: 2.4rem;
+            text-align: left;
+        }
+
+        .section-05-text-action {
+            align-items: center;
+            display: flex;
+        }
+
+        .section-05-text-action__text {
+            color: var(--color-0-99-35);
+            margin: 0;
+            margin-left: 2.4rem;
+            text-align: left;
+        }
+
+        /* Section 06 */
+        .section-06 {
+            margin: auto;
+            max-width: 122.4rem;
+            padding-bottom: 21.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-06 {
+                max-width: 80.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-06 {
+                max-width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-06 {
+                max-width: 32rem;
+            }
+        }
+
+        .section-06__title {
+            color: var(--color-0-0-100);
+            justify-self: center;
+            grid-column: 1 / 13;
+            grid-row: 1 / 2;
+            margin: 0;
+            margin-bottom: 1.6rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-06__title {
+                grid-column: 1 / 9;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-06__title {
+                font-size: 3.2rem;
+                grid-column: 1 / 5;
+                line-height: 4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-06__title {
+                font-size: 2.4rem;
+                line-height: 2.8rem;
+            }
+        }
+
+        .section-06__text {
+            color: var(--color-0-0-100);
+            grid-column: 3 / 11;
+            grid-row: 2 / 3;
+            margin: 0;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .section-06__text {
+                grid-column: 2 / 8;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .section-06__text {
+                font-size: 1.6rem;
+                grid-column: 1 / 5;
+                line-height: 2.4rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .section-06__text {
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-0-0-20);
+            height: 60rem;
+            padding-bottom: 2.4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            height: 100%;
+            margin: auto;
+            max-width: 122.4rem;
+            padding: 0 10.4rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .footer-content {
+                max-width: 80.8rem;
+                padding: 0 1.6rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .footer-content {
+                padding: 0 0.8rem;
+            }
+        }
+
+        .footer-content-cta {
+            align-items: center;
+            background-color: var(--color-0-0-100);
+            border-radius: 0.8rem;
+            box-shadow: 1.6rem 1.6rem 0 0 rgba(255, 255, 255, 0.1);
+            display: flex;
+            height: 16rem;
+            justify-content: space-between;
+            left: 50%;
+            padding: 0 4rem;
+            position: absolute;
+            transform: translate(-50%, -8rem);
+            width: 100.8rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .footer-content-cta {
+                height: 10.4rem;
+                transform: translate(-50%, -5.2rem);
+                width: 67.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .footer-content-cta {
+                box-shadow: 0.8rem 0.8rem 0 0 rgba(255, 255, 255, 0.1);
+                height: 6.4rem;
+                padding: 0 2rem;
+                transform: translate(-50%, -3.2rem);
+                width: 39.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .footer-content-cta {
+                border-radius: 0;
+                height: 4.8rem;
+                padding: 0 0.8rem;
+                transform: translate(-50%, -2.4rem);
+                width: 30.4rem;
+            }
+        }
+
+        .footer-content-cta__title {
+            color: var(--color-0-0-20);
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .footer-content-cta__title {
+                font-size: 2.4rem;
+                line-height: 2.8rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .footer-content-cta__title {
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .footer-content-cta__title {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
+        }
+
+        .footer-content-cta__button {
+            background-color: var(--color-0-0-20);
+            border: unset;
+            box-shadow: 0 0.8rem 1.6rem 0 rgba(0, 0, 0, 0.2);
+            border-radius: 0.8rem;
+            color: var(--color-0-0-100);
+            height: 8rem;
+            transition: background-color 250ms;
+            width: 28.5rem;
+        }
+
+        @media only screen and (max-width: 1224px) {
+            .footer-content-cta__button {
+                height: 5.6rem;
+                width: 19.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 808px) {
+            .footer-content-cta__button {
+                font-size: 1.6rem;
+                height: 4rem;
+                line-height: 1.6rem;
+                width: 13.6rem;
+            }
+        }
+
+        @media only screen and (max-width: 392px) {
+            .footer-content-cta__button {
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+            }
+        }
+
+        .footer-content-cta__button:hover {
+            background-color: var(--color-0-0-0);
+            cursor: pointer;
+        }
+
+        .footer-content__text {
+            color: var(--color-0-0-100);
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 392px) {
+            .footer-content__text {
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+            }
+        }
+
+        .footer-content__text--disclaimer {
+            margin-bottom: 2.4rem;
+        }
+
+        .footer-content__text--email {
+            margin-bottom: 10.4rem;
+        }
+
+        .footer-content__text--phone {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-content__text--license {
+            margin-bottom: 0.8rem;
         }
 
     </style>
@@ -369,127 +1315,246 @@
 
         const App = () => (
             <div className="main-bg">
-                {/* Header */}
-                <header className="header grid">
-                    <img className="header__company-logo" src="company-logo.png" alt="" />
-                </header>
+                <div className="background--top">
+                    {/* Header */}
+                    <header className="header grid">
+                        <img className="header__company-logo" src="company-logo.png" alt="" />
+                    </header>
 
-                {/* Section 01 */}
-                <div className="section-01 grid">
+                    {/* Section 01 */}
+                    <div className="section-01 grid">
 
-                    {/* Section 01: Text */}
-                    <div className="section-01-text">
-                        <div className="section-01-text-questions">
-                            <img src="section-01-text-questions__line.svg" alt="" />
-                            <p className="section-01-text-questions__text medium-20-20">Career change? New future?</p>
+                        {/* Section 01: Text */}
+                        <div className="section-01-text">
+                            <div className="section-01-text-questions">
+                                <img src="section-01-text-questions__line.svg" alt="" />
+                                <p className="section-01-text-questions__text medium-20-20">Career change? New future?</p>
+                            </div>
+                            <h1 className="section-01-text__title bold-60-68">Ready for Extraordinary?</h1>
+                            <p className="section-01-text__text regular-18-26">Keller Williams has always been more than just a real estate company. Our mission is clear: to build careers worth having, businesses worth owning and lives worth living.</p>
                         </div>
-                        <h1 className="section-01-text__title bold-60-68">Ready for Extraordinary?</h1>
-                        <p className="section-01-text__text regular-18-26">Keller Williams has always been more than just a real estate company. Our mission is clear: to build careers worth having, businesses worth owning and lives worth living.</p>
+
+                        {/* Section 01: Airplane */}
+                        <div className="section-01-airplane">
+                            <img className="section-01-airplane__airplane" src="section-01-airplane__airplane.svg" alt="" />
+                        </div>
+
+                        {/* Section 01: Form */}
+                        <form className="section-01-form">
+                            <h2 className="section-01-form__title medium-40-48">Start now!</h2>
+                            <p className="section-01-form__subtitle regular-20-28">Start your KW journey today:</p>
+
+                            {/* Input: Full Name */}
+                            <div className="section-01-form-input">
+                                <img src="section-01-form-input__full-name.svg" alt="" />
+                                <input className="section-01-form-input__input regular-16-16" type="text" placeholder="Full Name" />
+                            </div>
+
+                            {/* Input: Email */}
+                            <div className="section-01-form-input">
+                                <img src="section-01-form-input__email.svg" alt="" />
+                                <input className="section-01-form-input__input regular-16-16" type="email" placeholder="Email" />
+                            </div>
+
+                            {/* Input: Phone */}
+                            <div className="section-01-form-input">
+                                <img src="section-01-form-input__phone.svg" alt="" />
+                                <input className="section-01-form-input__input regular-16-16" type="phone" placeholder="Phone" />
+                            </div>
+
+                            {/* Radio Button: Agent */}
+                            {/* TODO: Switch radio button image when clicked */}
+                            <label className="section-01-form-radio-btns regular-16-16">A licensed Agent
+                                <input className="section-01-form-radio-btns__input" type="radio" name="radio" />
+                                <img className="section-01-form-radio-btns__radio" src="section-01-form-radio-btns__radio--default.svg" />
+                            </label>
+
+                            {/* Radio Button: Real Estate School */}
+                            <label className="section-01-form-radio-btns section-01-form-radio-btns--school regular-16-16">In Real Estate School
+                                <input className="section-01-form-radio-btns__input" type="radio" name="radio" />
+                                <img className="section-01-form-radio-btns__radio" src="section-01-form-radio-btns__radio--checked.svg" />
+                            </label>
+
+                            {/* Submit Button */}
+                            <button className="section-01-form__submit bold-20-20" type="submit">GET STARTED</button>
+                        </form>
+
+                        {/* Section 01: Form Success*/}
+
+
                     </div>
 
-                    {/* Section 01: Airplane */}
-                    <div className="section-01-airplane">
-                        <img className="section-01-airplane__airplane" src="section-01-airplane__airplane.svg" alt="" />
+                    {/* Section 02 */}
+                    <div className="section-02 grid">
+                    
+                        <h2 className="section-02__title bold-40-48">Built by Agent, for Agents</h2>
+                        <p className="section-02__text regular-20-28">And that means an unapologetic focus on you – the most important part of our business – the agent.</p>
+
                     </div>
 
-                    {/* Section 01: Form */}
-                    <form className="section-01-form">
-                        <h2 className="section-01-form__title medium-40-48">Start now!</h2>
-                        <p className="section-01-form__subtitle regular-20-28">Start your KW journey today:</p>
+                    {/* Section 03 */}
+                    <div className="section-03 grid">
 
-                        {/* Input: Full Name */}
-                        <div className="section-01-form-input">
-                            <img src="section-01-form-input__full-name.svg" alt="" />
-                            <input className="section-01-form-input__input regular-16-16" type="text" placeholder="Full Name" />
+                        {/* Section 03: Cards */}
+                        <div className="section-03-cards">
+                    
+                            {/* Card: Marketing */}
+                            <div className="section-03-card">
+                                <div className="section-03-card-icon">
+                                    <img className="section-03-card-icon__marketing" src="section-03-card__marketing.svg" alt="" />
+                                </div>
+                                <h3 className="section-03-card__title bold-24-28">Marketing</h3>
+                                <p className="section-03-card__text light-16-24">The KW Lead Generation Network gives you presence and power in online searches. The Keller Williams Listing System (KWLS) protects you when you decide to syndicate your listings.</p>
+                            </div>
+
+                            {/* Card: Technology */}
+                            <div className="section-03-card">
+                                <div className="section-03-card-icon">
+                                    <img className="section-03-card-icon__technology" src="section-03-card__technology.svg" alt="" />
+                                </div>
+                                <h3 className="section-03-card__title bold-24-28">Cutting Edge Technology</h3>
+                                <p className="section-03-card__text light-16-24">The Keller Cloud is technology that helps you control your database, your business, and your future with a fully integrated suite of products developed by agents, for agents.</p>
+                            </div>
+
+                            {/* Card: Training and Coaching */}
+                            <div className="section-03-card">
+                                <div className="section-03-card-icon">
+                                    <img className="section-03-card-icon__training" src="section-03-card__training.svg" alt="" />
+                                </div>
+                                <h3 className="section-03-card__title bold-24-28">Training and Coaching</h3>
+                                <p className="section-03-card__text light-16-24">Named the #1 Training Organization in the world by Training Magazine in 2015, we’re often described as a training and coaching company cleverly disguised as a real estate franchise.</p>
+                            </div>
+
+                            {/* Card: Shared Success */}
+                            <div className="section-03-card">
+                                <div className="section-03-card-icon">
+                                    <img className="section-03-card-icon__success" src="section-03-card__success.svg" alt="" />
+                                </div>
+                                <h3 className="section-03-card__title bold-24-28">Shared Success</h3>
+                                <p className="section-03-card__text light-16-24">Shared decisions. Shared succes. Through our profit share (US & Canada) and the growth share (Worldwide) programs, Keller Williams recognizes and rewards associates for helping to grow the company.</p>
+                            </div>
+
                         </div>
 
-                        {/* Input: Email */}
-                        <div className="section-01-form-input">
-                            <img src="section-01-form-input__email.svg" alt="" />
-                            <input className="section-01-form-input__input regular-16-16" type="email" placeholder="Email" />
+                    </div>
+
+                    {/* Sub-Section 03 */}
+                    <div className="subsection-03 grid">
+                    
+                        <h3 className="subsection-03__title bold-24-28">...and more</h3>
+                        <div className="subsection-03-bullets">
+
+                            {/* Bullet 01 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">Command: optimize & mange your business</p>
+                            </div>
+
+                            {/* Bullet 02 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">Kelle: Command in your pocket</p>
+                            </div>
+
+                            {/* Bullet 03 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">KW App: much more than just search</p>
+                            </div>
+
+                            {/* Bullet 04 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">Associate Leadership Council</p>
+                            </div>
+
+                            {/* Bullet 05 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">KW Cares: 501(c)(3) charity</p>
+                            </div>
+
+                            {/* Bullet 06 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">KW Wellness Program</p>
+                            </div>
+
+                            {/* Bullet 07 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">KW RED Day</p>
+                            </div>
+
+                            {/* Bullet 08 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">REALTOR Magazine’s ’30 Under 30′</p>
+                            </div>
+
+                            {/* Bullet 09 */}
+                            <div className="subsection-03-bullets-bullet">
+                                <img src="subsection-03-bullets-bullet__checkmark.svg" alt="" />
+                                <p className="subsection-03-bullets-bullet__text regular-16-16">KW Kids Can (KWKC)</p>
+                            </div>
                         </div>
+                    
+                    </div>
 
-                        {/* Input: Phone */}
-                        <div className="section-01-form-input">
-                            <img src="section-01-form-input__phone.svg" alt="" />
-                            <input className="section-01-form-input__input regular-16-16" type="phone" placeholder="Phone" />
-                        </div>
+                    {/* Section 04 */}
+                    <div className="section-04 grid">
 
-                        {/* Radio Button: Agent */}
-                        {/* TODO: Switch radio button image when clicked */}
-                        <label className="section-01-form-radio-btns regular-16-16">A licensed Agent
-                            <input className="section-01-form-radio-btns__input" type="radio" name="radio" />
-                            <img className="section-01-form-radio-btns__radio" src="section-01-form-radio-btns__radio--default.svg" />
-                        </label>
+                        <h2 className="section-04__title bold-40-48">Build the #1 Brand. Yours.</h2>
+                        <p className="section-04__text regular-20-28">Your clients choose YOU, not your firm. We stand behind our agents, not in front of them, providing you with the tools you need to power your business.</p>
 
-                        {/* Radio Button: Real Estate School */}
-                        <label className="section-01-form-radio-btns section-01-form-radio-btns--school regular-16-16">In Real Estate School
-                            <input className="section-01-form-radio-btns__input" type="radio" name="radio" checked />
-                            <img className="section-01-form-radio-btns__radio" src="section-01-form-radio-btns__radio--checked.svg" />
-                        </label>
-
-                        {/* Submit Button */}
-                        <button className="section-01-form__submit bold-20-20" type="submit">GET STARTED</button>
-                    </form>
+                    </div>
 
                 </div>
 
-                {/* Section 02 */}
-                <div className="section-02 grid">
-                
-                    <h2 className="section-02__title bold-40-48">Built by Agent, for Agents</h2>
-                    <p className="section-02__text regular-20-28">And that means an unapologetic focus on you – the most important part of our business – the agent.</p>
+                <div className="background--bottom">
+
+                    {/* Section 05 */}
+                    <div className="section-05 grid">
+                    
+                        <video className="section-05__video" controls src="kw-promotional-video.mp4"></video>
+                        <div className="section-05-text">
+                            <h4 className="section-05-text__title bold-20-20">Want to learn more?</h4>
+                            <p className="section-05-text__text light-16-24">Check out the promotional video to get inspired:</p>
+                            <div className="section-05-text-action">
+                                <img className="section-05-text-action__play" src="section-05-text-action__play.svg" alt="" />
+                                <p className="section-05-text-action__text bold-20-20">WATCH VIDEO</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    {/* Section 06 */}
+                    <div className="section-06 grid">
+                    
+                        <h1 className="section-06__title bold-60-68">Ready to start?</h1>
+                        <p className="section-06__text regular-18-26">If you’re looking for a refreshing change, a positive atmosphere and opportunities to turn your career dreams into reality, Keller Williams is the place for you.</p>
+                    
+                    </div>
 
                 </div>
 
-                {/* Section 03 */}
-                <div className="section-03 grid">
+                {/* Footer */}
+                <div className="footer">
 
-                    {/* Section 03: Cards */}
-                    <div className="section-03-cards">
-                
-                        {/* Card: Marketing */}
-                        <div className="section-03-card">
-                            <div className="section-03-card-icon">
-                                <img className="section-03-card-icon__marketing" src="section-03-card__marketing.svg" alt="" />
-                            </div>
-                            <h3 className="section-03-card__title bold-24-28">Marketing</h3>
-                            <p className="section-03-card__text light-16-24">The KW Lead Generation Network gives you presence and power in online searches. The Keller Williams Listing System (KWLS) protects you when you decide to syndicate your listings.</p>
-                        </div>
-
-                        {/* Card: Technology */}
-                        <div className="section-03-card">
-                            <div className="section-03-card-icon">
-                                <img className="section-03-card-icon__technology" src="section-03-card__technology.svg" alt="" />
-                            </div>
-                            <h3 className="section-03-card__title bold-24-28">Cutting Edge Technology</h3>
-                            <p className="section-03-card__text light-16-24">The Keller Cloud is technology that helps you control your database, your business, and your future with a fully integrated suite of products developed by agents, for agents.</p>
-                        </div>
-
-                        {/* Card: Training and Coaching */}
-                        <div className="section-03-card">
-                            <div className="section-03-card-icon">
-                                <img className="section-03-card-icon__training" src="section-03-card__training.svg" alt="" />
-                            </div>
-                            <h3 className="section-03-card__title bold-24-28">Training and Coaching</h3>
-                            <p className="section-03-card__text light-16-24">Named the #1 Training Organization in the world by Training Magazine in 2015, we’re often described as a training and coaching company cleverly disguised as a real estate franchise.</p>
-                        </div>
-
-                        {/* Card: Shared Success */}
-                        <div className="section-03-card">
-                            <div className="section-03-card-icon">
-                                <img className="section-03-card-icon__success" src="section-03-card__success.svg" alt="" />
-                            </div>
-                            <h3 className="section-03-card__title bold-24-28">Shared Success</h3>
-                            <p className="section-03-card__text light-16-24">Shared decisions. Shared succes. Through our profit share (US & Canada) and the growth share (Worldwide) programs, Keller Williams recognizes and rewards associates for helping to grow the company.</p>
-                        </div>
-
+                    <div className="footer-content-cta">
+                        <h2 className="footer-content-cta__title medium-40-48">Start your new career today!</h2>
+                        <button className="footer-content-cta__button bold-20-20">GET STARTED</button>
                     </div>
                 
-                </div>
+                    <div className="footer-content">
+                        <p className="footer-content__text footer-content__text--license regular-16-16">#NV S.177579</p>
+                        <p className="footer-content__text footer-content__text--phone regular-16-16">Phone: 775-846-0349</p>
+                        <p className="footer-content__text footer-content__text--email regular-16-16">Email: ginger.marphis@gmail.com</p>
+                        <p className="footer-content__text footer-content__text--disclaimer light-16-16">Every Office is Independently Owned & Operated. Keller Williams Realty, Inc. is a real estate franchise company. Each Keller Williams office is independently owned and operated. Keller Williams Realty, Inc. is an Equal Opportunity Employer and supports the Fair Housing Act. All information provided is deemed reliable but is not guaranteed and should be independently verified. Properties subject to prior sale or rental.</p>
+                        <p className="footer-content__text footer-content__text--copyright light-16-16">Copyright © 2000-2020 Keller Williams® Realty.</p>
+                    </div>
 
-                {/* Background Top SVG */}
-                <img className="main-bg__svg" src="background-top.svg" alt="" />
+                </div>
             </div>
         );
 
