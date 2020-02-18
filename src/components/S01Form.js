@@ -1,50 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 
-import fullName from "../media/svgs/section-01-form-input__full-name.svg";
-import email from "../media/svgs/section-01-form-input__email.svg";
-import phone from "../media/svgs/section-01-form-input__phone.svg";
-import radioDefault from "../media/svgs/section-01-form-radio-btns__radio--default.svg";
-import radioChecked from "../media/svgs/section-01-form-radio-btns__radio--checked.svg";
+import S01FormInput from "./S01FormInput";
+import S01FormCheckbox from "./S01FormCheckbox";
 
-const S01Form = () => {
+import nameIcon from "../media/svgs/section-01-form-input__full-name.svg";
+import emailIcon from "../media/svgs/section-01-form-input__email.svg";
+import phoneIcon from "../media/svgs/section-01-form-input__phone.svg";
+
+const S01Form = ({ submitted, setSubmitted }) => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [agentChecked, setAgentChecked] = useState(false);
+    const [schoolChecked, setSchoolChecked] = useState(false);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (name && email && phone) {
+            setName("");
+            setEmail("");
+            setPhone("");
+            setAgentChecked(false);
+            setSchoolChecked(false);
+            setSubmitted(true);
+        }
+    }
+
     return (
-        <form className="section-01-form">
-            <h2 className="section-01-form__title medium-40-48">Start now!</h2>
-            <p className="section-01-form__subtitle regular-20-28">Start your KW journey today:</p>
-
-            {/* Input: Full Name */}
-            <div className="section-01-form-input">
-                <img src={fullName} alt="" />
-                <input className="section-01-form-input__input regular-16-16" type="text" placeholder="Full Name" />
-            </div>
-
-            {/* Input: Email */}
-            <div className="section-01-form-input">
-                <img src={email} alt="" />
-                <input className="section-01-form-input__input regular-16-16" type="email" placeholder="Email" />
-            </div>
-
-            {/* Input: Phone */}
-            <div className="section-01-form-input">
-                <img src={phone} alt="" />
-                <input className="section-01-form-input__input regular-16-16" type="phone" placeholder="Phone" />
-            </div>
-
-            {/* Radio Button: Agent */}
-            {/* TODO: Switch radio button image when clicked */}
-            <label className="section-01-form-radio-btns regular-16-16">A licensed Agent
-                <input className="section-01-form-radio-btns__input" type="radio" name="radio" />
-                <img className="section-01-form-radio-btns__radio" src={radioDefault} />
-            </label>
-
-            {/* Radio Button: Real Estate School */}
-            <label className="section-01-form-radio-btns section-01-form-radio-btns--school regular-16-16">In Real Estate School
-                <input className="section-01-form-radio-btns__input" type="radio" name="radio" />
-                <img className="section-01-form-radio-btns__radio" src={radioChecked} />
-            </label>
-
-            {/* Submit Button */}
-            <button className="section-01-form__submit bold-20-20" type="submit">GET STARTED</button>
+        <form className="section-01-form" onSubmit={handleSubmit}>
+            <h2 className="section-01-form__title medium-40-48">{submitted ? "Thank You!" : "Start now!"}</h2>
+            <p className="section-01-form__subtitle regular-20-28">{submitted ? "A KW growth leader will contact you soon." : "Start your KW journey today:"}</p>
+            <S01FormInput
+                type="text"
+                placeholder="Full Name"
+                src={nameIcon}
+                text={name}
+                setText={setName}
+                submitted={submitted}
+            />
+            <S01FormInput
+                type="email"
+                placeholder="Email"
+                src={emailIcon}
+                text={email}
+                setText={setEmail}
+                submitted={submitted}
+            />
+            <S01FormInput
+                type="phone"
+                placeholder="Phone"
+                src={phoneIcon}
+                text={phone}
+                setText={setPhone}
+                submitted={submitted}
+            />
+            <S01FormCheckbox
+                agentChecked={agentChecked}
+                setAgentChecked={setAgentChecked}
+                text="A licensed Agent"
+                submitted={submitted}
+            />
+            <S01FormCheckbox
+                schoolChecked={schoolChecked}
+                setSchoolChecked={setSchoolChecked}
+                school=" section-01-form-radio-btns--school"
+                text="In Real Estate School"
+                submitted={submitted}
+            />
+            <button className="section-01-form__submit bold-20-20" type="submit" disabled={submitted}>GET STARTED</button>
         </form>
     );
 }

@@ -17,6 +17,7 @@ html {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -357,7 +358,6 @@ img {
     max-width: 48.8rem;
     padding: 5.6rem;
     border-radius: 0.8rem;
-
 }
 
 @media only screen and (max-width: 1224px) {
@@ -885,6 +885,7 @@ img {
 
 @media only screen and (max-width: 1224px) {
     .section-04 {
+        margin-bottom: 4.4rem;
         max-width: 80.8rem;
     }
 }
@@ -995,6 +996,7 @@ img {
 
 @media only screen and (max-width: 1224px) {
     .section-05__video {
+        grid-row: 2 / 3;
         justify-self: center;
     }
 }
@@ -1020,7 +1022,14 @@ img {
 
 @media only screen and (max-width: 1224px) {
     .section-05-text {
-        display: none;
+        justify-self: center;
+        grid-column: 1 / 9;
+    }
+}
+
+@media only screen and (max-width: 808px) {
+    .section-05-text {
+        grid-column: 1 / 5;
     }
 }
 
@@ -1031,6 +1040,12 @@ img {
     text-align: left;
 }
 
+@media only screen and (max-width: 808px) {
+    .section-05-text__title {
+        font-size: 1.6rem;
+    }
+}
+
 .section-05-text__text {
     color: var(--color-0-0-20);
     margin: 0;
@@ -1038,9 +1053,26 @@ img {
     text-align: left;
 }
 
+@media only screen and (max-width: 1224px) {
+    .section-05-text__text {
+        display: none;
+    }
+}
+
 .section-05-text-action {
     align-items: center;
     display: flex;
+}
+
+@media only screen and (max-width: 1224px) {
+    .section-05-text-action {
+        display: none;
+    }
+}
+
+.section-05-text-action__play:hover,
+.section-05-text-action__pause:hover {
+    cursor: pointer;
 }
 
 .section-05-text-action__text {

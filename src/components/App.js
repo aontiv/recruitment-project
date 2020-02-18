@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "./Header";
 import S01Grid from "./S01Grid";
@@ -11,11 +11,13 @@ import S06Grid from "./S06Grid";
 import Footer from "./Footer";
 
 const App = () => {
+    const [submitted, setSubmitted] = useState(false);
+
     return (
         <div className="main-bg">
             <div className="background--top">
                 <Header />
-                <S01Grid />
+                <S01Grid submitted={submitted} setSubmitted={setSubmitted} />
                 <S02Grid />
                 <S03Grid />
                 <SS03Grid />
@@ -25,7 +27,7 @@ const App = () => {
                 <S05Grid />
                 <S06Grid />
             </div>
-            <Footer />
+            <Footer submitted={submitted} setSubmitted={setSubmitted} />
         </div>
     );
 }
