@@ -14,6 +14,12 @@ const S01Form = ({ submitted, setSubmitted }) => {
     const [agentChecked, setAgentChecked] = useState(false);
     const [schoolChecked, setSchoolChecked] = useState(false);
 
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    };
+
     const handleSubmit = e => {
         e.preventDefault();
         if (name && email && phone) {
@@ -23,14 +29,21 @@ const S01Form = ({ submitted, setSubmitted }) => {
             setAgentChecked(false);
             setSchoolChecked(false);
             setSubmitted(true);
+
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", name, email, phone, agentChecked, schoolChecked })
+            });
         }
-    }
+    };
 
     return (
-        <form className="section-01-form" onSubmit={handleSubmit}>
+        <form className="section-01-form" name="contact" onSubmit={handleSubmit}>
             <h2 className="section-01-form__title medium-40-48">{submitted ? "Thank You!" : "Start now!"}</h2>
             <p className="section-01-form__subtitle regular-20-28">{submitted ? "A KW growth leader will contact you soon." : "Start your KW journey today:"}</p>
             <S01FormInput
+                name="name"
                 type="text"
                 placeholder="Full Name"
                 src={nameIcon}
@@ -39,6 +52,7 @@ const S01Form = ({ submitted, setSubmitted }) => {
                 submitted={submitted}
             />
             <S01FormInput
+                name="email"
                 type="email"
                 placeholder="Email"
                 src={emailIcon}
@@ -47,6 +61,7 @@ const S01Form = ({ submitted, setSubmitted }) => {
                 submitted={submitted}
             />
             <S01FormInput
+                name="phone"
                 type="phone"
                 placeholder="Phone"
                 src={phoneIcon}

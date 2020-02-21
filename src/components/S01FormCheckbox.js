@@ -16,7 +16,7 @@ const S01FormCheckbox = ({ agentChecked, setAgentChecked, schoolChecked, setScho
 
     return (
         <label className={`section-01-form-radio-btns regular-16-16` + (school ? school : "")}>{text}
-            <input className="section-01-form-radio-btns__input" type="radio" name="radio" onClick={changeIcon} disabled={submitted} />
+            <input className="section-01-form-radio-btns__input" type="radio" name={agentChecked ? "agentChecked" : "schoolChecked"} onClick={changeIcon} disabled={submitted} />
             <img className="section-01-form-radio-btns__radio" src={chooseCheckbox()} />
         </label>
     );
